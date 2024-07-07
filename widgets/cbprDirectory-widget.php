@@ -180,7 +180,24 @@ class Elementor_cbprDirectory_Widget extends \Elementor\Widget_Base
         }
 
         foreach (array_slice($cbpr_data, 1) as $elem) {
-          echo renderPost($elem[0], $elem[1], $elem[2], $elem[3], $elem[4], $elem[5], $elem[6], $elem[7], $elem[8], $elem[9], $elem[10], $elem[11], $elem[12], $elem[13], $elem[14], $elem[15]);
+          $name = $elem[0] ?? '';
+          $country = $elem[1] ?? '';
+          $agent = $elem[2] ?? '';
+          $validFrom = $elem[3] ?? '';
+          $validUntil = $elem[4] ?? '';
+          $cbpr = $elem[5] ?? '';
+          $prp = $elem[6] ?? '';
+          $website = $elem[7] ?? '';
+          $privacyStatement = $elem[8] ?? '';
+          $contactName = $elem[9] ?? '';
+          $contactEmail = $elem[10] ?? '';
+          $disputeResolution = $elem[11] ?? '';
+          $agentUrl = $elem[12] ?? '';
+          $agentDescription = $elem[13] ?? '';
+          $enforcementAuthorities = $elem[14] ?? '';
+          $scope = $elem[15] ?? '';
+
+          echo renderPost($name, $country, $agent, $validFrom, $validUntil, $cbpr, $prp, $website, $privacyStatement, $contactName, $contactEmail, $disputeResolution, $agentUrl, $agentDescription, $enforcementAuthorities, $scope);
         }
         ?>
       </div>
