@@ -126,22 +126,22 @@ class Elementor_cbprDirectory_Widget extends \Elementor\Widget_Base
         <?php
         function renderPost($name, $country, $agent, $validFrom, $validUntil, $cbpr, $prp, $website, $privacyStatement, $contactName, $contactEmail, $disputeResolution, $agentUrl, $agentDescription, $enforcementAuthorities, $scope)
         {
-          $name = htmlspecialchars($name, ENT_QUOTES, 'UTF-8');
-          $country = htmlspecialchars($country, ENT_QUOTES, 'UTF-8');
-          $agent = htmlspecialchars($agent, ENT_QUOTES, 'UTF-8');
-          $validFrom = htmlspecialchars($validFrom, ENT_QUOTES, 'UTF-8');
-          $validUntil = htmlspecialchars($validUntil, ENT_QUOTES, 'UTF-8');
+          $name = htmlspecialchars($name ?? '', ENT_QUOTES, 'UTF-8');
+          $country = htmlspecialchars($country ?? '', ENT_QUOTES, 'UTF-8');
+          $agent = htmlspecialchars($agent ?? '', ENT_QUOTES, 'UTF-8');
+          $validFrom = htmlspecialchars($validFrom ?? '', ENT_QUOTES, 'UTF-8');
+          $validUntil = htmlspecialchars($validUntil ?? '', ENT_QUOTES, 'UTF-8');
           $cbprBadge = $cbpr === 'TRUE' ? '<p class="cbpr--badge"><b>Global CBPR</b></p>' : '';
           $prpBadge = $prp === 'TRUE' ? '<p class="cbpr--badge"><b>Global PRP</b></p>' : '';
-          $website = htmlspecialchars($website, ENT_QUOTES, 'UTF-8');
-          $privacyStatement = htmlspecialchars($privacyStatement, ENT_QUOTES, 'UTF-8');
-          $contactName = htmlspecialchars($contactName, ENT_QUOTES, 'UTF-8');
-          $contactEmail = htmlspecialchars($contactEmail, ENT_QUOTES, 'UTF-8');
-          $disputeResolution = htmlspecialchars($disputeResolution, ENT_QUOTES, 'UTF-8');
-          $agentUrl = htmlspecialchars($agentUrl, ENT_QUOTES, 'UTF-8');
-          $agentDescription = htmlspecialchars($agentDescription, ENT_QUOTES, 'UTF-8');
-          $enforcementAuthorities = htmlspecialchars($enforcementAuthorities, ENT_QUOTES, 'UTF-8');
-          $scope = htmlspecialchars($scope, ENT_QUOTES, 'UTF-8');
+          $website = htmlspecialchars($website ?? '', ENT_QUOTES, 'UTF-8');
+          $privacyStatement = htmlspecialchars($privacyStatement ?? '', ENT_QUOTES, 'UTF-8');
+          $contactName = htmlspecialchars($contactName ?? '', ENT_QUOTES, 'UTF-8');
+          $contactEmail = htmlspecialchars($contactEmail ?? '', ENT_QUOTES, 'UTF-8');
+          $disputeResolution = htmlspecialchars($disputeResolution ?? '', ENT_QUOTES, 'UTF-8');
+          $agentUrl = htmlspecialchars($agentUrl ?? '', ENT_QUOTES, 'UTF-8');
+          $agentDescription = htmlspecialchars($agentDescription ?? '', ENT_QUOTES, 'UTF-8');
+          $enforcementAuthorities = htmlspecialchars($enforcementAuthorities ?? '', ENT_QUOTES, 'UTF-8');
+          $scope = htmlspecialchars($scope ?? '', ENT_QUOTES, 'UTF-8');
 
           return <<<HTML
                   <div class="cbpr--post" 
