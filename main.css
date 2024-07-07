@@ -1,0 +1,309 @@
+.cbpr__certs {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 20px;
+}
+
+#clearFilters {
+  background: none;
+  border: none;
+  color: #23395E;
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: 1rem;
+  padding: 0;
+  margin-left: 10px;
+  display: none;
+}
+
+#clearFilters:hover {
+  text-decoration: none;
+}
+
+.pipe-separator {
+  font-size: 1rem;
+  color: #000;
+  display: none;
+}
+
+.cbpr__search-header {
+  margin-bottom: 30px;
+  display: inline-flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.cbpr__header-title {
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.cbpr--post-head {
+  display: flex;
+  gap: 24px;
+  padding: 8px 15px;
+}
+
+.compliance_table {
+  margin-top: 20px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cbpr--post {
+  cursor: pointer;
+  border: 1px solid #d7d7d7;
+  font-size: 15px;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, .15);
+  transition: all .25s;
+  border-radius: 8px;
+}
+
+.cbpr--post:hover {
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, .15);
+}
+
+.cbpr--post-title {
+  font-size: 20px;
+  margin-right: 30px;
+  margin-bottom: 0;
+  font-weight: bold;
+}
+
+.cbpr--post-more {
+  font-size: 24px;
+  font-weight: bold;
+  float: right;
+  margin: 8px 24px 0 0;
+
+}
+
+.cbpr--post-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  padding: 8px 15px;
+  align-items: center;
+  background-color: #f6f6f6;
+}
+
+.cbpr--post-meta p {
+  margin: 0;
+}
+
+.cbpr--badge {
+  background-color: #eee;
+  align-self: flex-start;
+  color: #23395E;
+  padding: 4px 8px;
+  text-align: center;
+  border-radius: 8px;
+  margin-bottom: 0;
+}
+
+.cbpr-search {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.cbpr-search-input,
+#countryFilter,
+#agentFilter,
+#certTypeFilter {
+  height: 40px;
+  padding: 0 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box;
+  flex: 1;
+  min-width: 150px;
+}
+
+.cbpr-search-input {
+  flex: 2;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: #fff;
+  background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns%3D"http%3A//www.w3.org/2000/svg" width%3D"20" height%3D"20" viewBox%3D"0 0 20 20"%3E%3Cpath fill%3D"%23333" d%3D"M10 12.5L4 7.5h12l-6 5z"/%3E%3C/svg%3E');
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px 16px;
+  padding-right: 30px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/**************************\
+  Modal Styles
+\**************************/
+
+.modal {
+  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, arial, sans-serif;
+}
+
+.modal__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal__container {
+  background-color: #fff;
+  padding: 30px;
+  max-width: 750px;
+  max-height: 100vh;
+  border-radius: 8px;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.modal__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal__title {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 1.25;
+  box-sizing: border-box;
+}
+
+.modal__close {
+  background: transparent;
+  border: 0;
+}
+
+.modal__header .modal__close:before {
+  content: "\2715";
+}
+
+.modal__content {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+
+.modal__btn {
+  font-size: .875rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  border-radius: .25rem;
+  border-style: none;
+  border-width: 0;
+  cursor: pointer;
+  -webkit-appearance: button;
+  text-transform: none;
+  overflow: visible;
+  line-height: 1.15;
+  margin: 0;
+  will-change: transform;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  transition: -webkit-transform .25s ease-out;
+  transition: transform .25s ease-out;
+  transition: transform .25s ease-out, -webkit-transform .25s ease-out;
+}
+
+.modal__btn:focus,
+.modal__btn:hover {
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
+/**************************\
+  Animation Styles
+\**************************/
+@keyframes mmfadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes mmfadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes mmslideIn {
+  from {
+    transform: translateY(15%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes mmslideOut {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-10%);
+  }
+}
+
+.micromodal-slide {
+  display: none;
+}
+
+.micromodal-slide.is-open {
+  display: block;
+}
+
+.micromodal-slide[aria-hidden="false"] .modal__overlay {
+  animation: mmfadeIn .3s cubic-bezier(0.0, 0.0, 0.2, 1);
+}
+
+.micromodal-slide[aria-hidden="false"] .modal__container {
+  animation: mmslideIn .3s cubic-bezier(0, 0, .2, 1);
+}
+
+.micromodal-slide[aria-hidden="true"] .modal__overlay {
+  animation: mmfadeOut .3s cubic-bezier(0.0, 0.0, 0.2, 1);
+}
+
+.micromodal-slide[aria-hidden="true"] .modal__container {
+  animation: mmslideOut .3s cubic-bezier(0, 0, .2, 1);
+}
+
+.micromodal-slide .modal__container,
+.micromodal-slide .modal__overlay {
+  will-change: transform;
+}
