@@ -75,6 +75,7 @@
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, .15);
   transition: all .25s;
   border-radius: 8px;
+  overflow: hidden;
 }
 
 .cbpr--post:hover {
