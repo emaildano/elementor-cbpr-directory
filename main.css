@@ -35,7 +35,23 @@
 
 .cbpr__header-title {
   font-weight: bold;
-  font-size: 22px;
+  font-size: 24px;
+}
+
+#modal-1 a {
+  color: #23395E;
+  text-decoration: underline;
+}
+
+#modal-1 h4 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 1.5rem;
+}
+
+#modal-1 hr {
+  margin-bottom: 1rem;
+  border-top: 1px solid #f6f6f6;
 }
 
 .cbpr--post-head {
@@ -73,7 +89,7 @@
 }
 
 .cbpr--post-more {
-  font-size: 24px;
+  font-size: 18px;
   font-weight: bold;
   float: right;
   margin: 8px 24px 0 0;
@@ -168,7 +184,7 @@ select {
   background-color: #fff;
   padding: 30px;
   max-width: 750px;
-  max-height: 100vh;
+  max-height: 90vh;
   border-radius: 8px;
   overflow-y: auto;
   box-sizing: border-box;

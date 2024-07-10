@@ -161,7 +161,7 @@ class Elementor_cbprDirectory_Widget extends \Elementor\Widget_Base
                     data-agent-description="$agentDescription"
                     data-enforcement-authorities="$enforcementAuthorities"
                     data-scope="$scope">
-                    <div class="cbpr--post-more" title="More information about this organization">&#9432;</div>
+                    <div class="cbpr--post-more" title="More information about this organization">&#9432; More info</div>
                     <div class="cbpr--post-head">
                       <p class="cbpr--post-title">$name</p>
                       $cbprBadge

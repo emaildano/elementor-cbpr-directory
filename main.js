@@ -38,7 +38,9 @@ document.addEventListener("DOMContentLoaded", () => {
       agentUrl: post.dataset.agentUrl ? ensureQualifiedUrl(post.dataset.agentUrl) : '',
       agentDescription: post.dataset.agentDescription,
       enforcementAuthorities: post.dataset.enforcementAuthorities,
-      scope: post.dataset.scope
+      scope: post.dataset.scope,
+      agentPhone: post.dataset.agentPhone,
+      agentAddress: post.dataset.agentAddress
     }));
   };
 
@@ -164,6 +166,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const agentDescription = post.dataset.agentDescription;
         const enforcementAuthorities = post.dataset.enforcementAuthorities;
         const scope = post.dataset.scope;
+        const agentPhone = post.dataset.agentPhone;
+        const agentAddress = post.dataset.agentAddress;
 
         document.getElementById('modal-1-title').innerHTML = website ? `<a href="${website}" target="_blank">${name}</a>` : name;
         document.getElementById('modal-1-content').innerHTML = `
@@ -172,17 +176,29 @@ document.addEventListener("DOMContentLoaded", () => {
             ${prp ? `<p class="cbpr--badge"><b>${prp}</b></p>` : ''}
           </div>
           <p><b>Certified in:</b> ${country}</p>
-          <p><b>Accountability Agent:</b> <a href="${agentUrl}" target="_blank">${agent}</a></p>
           <p><b>Certification Valid From:</b> ${validFrom}</p>
           <p><b>Certification Valid Until:</b> ${validUntil}</p>
-          ${website ? `<p><b>Organization Website:</b> <a href="${website}" target="_blank">${website}</a></p>` : ''}
-          ${privacyStatement ? `<p><b>Organization Privacy Statement:</b> <a href="${privacyStatement}" target="_blank">${privacyStatement}</a></p>` : ''}
-          <p><b>Organization Contact Name:</b> ${contactName}</p>
-          ${contactEmail ? `<p><b>Organization Contact Email:</b> <a href="mailto:${contactEmail}">${contactEmail}</a></p>` : ''}
-          ${disputeResolution ? `<p><b>Dispute Resolution:</b> <a href="${disputeResolution}" target="_blank">${disputeResolution}</a></p>` : ''}
-          <p><b>Accountability Agents Description:</b> ${agentDescription}</p>
-          <p><b>Privacy Enforcement Authorities:</b> ${enforcementAuthorities}</p>
-          <p><b>Scope of Certification:</b> ${scope}</p>
+
+          <h4>Organization Details</h4>
+          <hr>
+          ${website ? `<p><b>Website:</b> <a href="${website}" target="_blank">${website}</a></p>` : ''}
+          ${privacyStatement ? `<p><b>Privacy Statement:</b> <a href="${privacyStatement}" target="_blank">${privacyStatement}</a></p>` : ''}
+          <p><b>Contact Name:</b> ${contactName}</p>
+          ${contactEmail ? `<p><b>Contact Email:</b> <a href="mailto:${contactEmail}">${contactEmail}</a></p>` : ''}
+
+          <h4>Accountability Agent Information</h4>
+          <hr>
+          <p><b>Agent:</b> <a href="${agentUrl}" target="_blank">${agent}</a></p>
+          ${agentPhone ? `<p><b>Agent Phone:</b> ${agentPhone}</p>` : ''}
+          ${agentAddress ? `<p><b>Agent Address:</b> ${agentAddress}</p>` : ''}
+          <p><b>Agent Description:</b> ${agentDescription}</p>
+
+          <h4>Privacy Enforcement Authorities</h4>
+          <hr>
+          <p>${enforcementAuthorities}</p>
+
+          <h4>Scope of Certification</h4>
+          <p>${scope}</p>
         `;
 
         MicroModal.show('modal-1');
