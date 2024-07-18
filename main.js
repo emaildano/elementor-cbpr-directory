@@ -33,11 +33,12 @@ document.addEventListener("DOMContentLoaded", () => {
       website: post.dataset.website ? ensureQualifiedUrl(post.dataset.website) : '',
       privacyStatement: post.dataset.privacyStatement ? ensureQualifiedUrl(post.dataset.privacyStatement) : '',
       contactName: post.dataset.contactName,
-      contactEmail: post.dataset.contactEmail,
+      contactEmail: isValidEmail(post.dataset.contactEmail) ? post.dataset.contactEmail : '',
       disputeResolution: post.dataset.disputeResolution ? ensureQualifiedUrl(post.dataset.disputeResolution) : '',
       agentUrl: post.dataset.agentUrl ? ensureQualifiedUrl(post.dataset.agentUrl) : '',
       agentDescription: post.dataset.agentDescription,
       enforcementAuthorities: post.dataset.enforcementAuthorities,
+      peaWebsite: post.dataset.peaWebsite ? ensureQualifiedUrl(post.dataset.peaWebsite) : '',
       scope: post.dataset.scope,
       agentPhone: post.dataset.agentPhone,
       agentAddress: post.dataset.agentAddress
@@ -165,6 +166,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const agentUrl = post.dataset.agentUrl ? ensureQualifiedUrl(post.dataset.agentUrl) : '';
         const agentDescription = post.dataset.agentDescription;
         const enforcementAuthorities = post.dataset.enforcementAuthorities;
+        const peaWebsite = post.dataset.peaWebsite ? ensureQualifiedUrl(post.dataset.peaWebsite) : '';
         const scope = post.dataset.scope;
         const agentPhone = post.dataset.agentPhone;
         const agentAddress = post.dataset.agentAddress;
@@ -195,7 +197,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
           <h4>Privacy Enforcement Authorities</h4>
           <hr>
-          <p>${enforcementAuthorities}</p>
+          <p>${peaWebsite ? `<a href="${peaWebsite}" target="_blank">${enforcementAuthorities}</a>` : enforcementAuthorities}</p>
 
           <h4>Scope of Certification</h4>
           <p>${scope}</p>

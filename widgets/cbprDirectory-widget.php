@@ -124,7 +124,7 @@ class Elementor_cbprDirectory_Widget extends \Elementor\Widget_Base
 
       <div class="compliance_table data_table hide-until-load cbpr_landing" id="postsContainer">
         <?php
-        function renderPost($name, $country, $agent, $validFrom, $validUntil, $cbpr, $prp, $website, $privacyStatement, $contactName, $contactEmail, $disputeResolution, $agentUrl, $agentDescription, $enforcementAuthorities, $scope)
+        function renderPost($name, $country, $agent, $validFrom, $validUntil, $cbpr, $prp, $website, $privacyStatement, $contactName, $contactEmail, $disputeResolution, $agentUrl, $agentDescription, $enforcementAuthorities, $peaWebsite, $scope)
         {
           $name = htmlspecialchars($name ?? '', ENT_QUOTES, 'UTF-8');
           $country = htmlspecialchars($country ?? '', ENT_QUOTES, 'UTF-8');
@@ -141,6 +141,7 @@ class Elementor_cbprDirectory_Widget extends \Elementor\Widget_Base
           $agentUrl = htmlspecialchars($agentUrl ?? '', ENT_QUOTES, 'UTF-8');
           $agentDescription = htmlspecialchars($agentDescription ?? '', ENT_QUOTES, 'UTF-8');
           $enforcementAuthorities = htmlspecialchars($enforcementAuthorities ?? '', ENT_QUOTES, 'UTF-8');
+          $peaWebsite = htmlspecialchars($peaWebsite ?? '', ENT_QUOTES, 'UTF-8');
           $scope = htmlspecialchars($scope ?? '', ENT_QUOTES, 'UTF-8');
 
           return <<<HTML
@@ -160,6 +161,7 @@ class Elementor_cbprDirectory_Widget extends \Elementor\Widget_Base
                     data-agent-url="$agentUrl"
                     data-agent-description="$agentDescription"
                     data-enforcement-authorities="$enforcementAuthorities"
+                    data-pea-website="$peaWebsite"
                     data-scope="$scope">
                     <div class="cbpr--post-more" title="More information about this organization">&#9432; More info</div>
                     <div class="cbpr--post-head">
@@ -195,9 +197,10 @@ class Elementor_cbprDirectory_Widget extends \Elementor\Widget_Base
           $agentUrl = $elem[12] ?? '';
           $agentDescription = $elem[13] ?? '';
           $enforcementAuthorities = $elem[14] ?? '';
-          $scope = $elem[15] ?? '';
+          $peaWebsite = $elem[15] ?? '';
+          $scope = $elem[16] ?? '';
 
-          echo renderPost($name, $country, $agent, $validFrom, $validUntil, $cbpr, $prp, $website, $privacyStatement, $contactName, $contactEmail, $disputeResolution, $agentUrl, $agentDescription, $enforcementAuthorities, $scope);
+          echo renderPost($name, $country, $agent, $validFrom, $validUntil, $cbpr, $prp, $website, $privacyStatement, $contactName, $contactEmail, $disputeResolution, $agentUrl, $agentDescription, $enforcementAuthorities, $peaWebsite, $scope);
         }
         ?>
       </div>
