@@ -211,3 +211,59 @@ document.addEventListener("DOMContentLoaded", () => {
   renderPosts(posts);
   attachPostClickHandlers();
 });
+
+
+// Collect country links and add them to the "Filter by Jurisdiction" section
+document.addEventListener('DOMContentLoaded', function () {
+  // Find all articles
+  const articles = document.querySelectorAll('article');
+
+  // Initialize an array to store the collected links
+  const countryLinks = [];
+  const addedLinks = new Set(); // To track added links and avoid duplicates
+
+  // Find the container where we want to add the new jurisdictions
+  const jurisdictionContainer = document.querySelector('.elementor-widget-container .ae-custom-tax-wrapper .ae-custom-tax');
+
+  // Check if the jurisdiction container was found
+  if (!jurisdictionContainer) {
+    console.error('Jurisdiction container not found.');
+    return;
+  }
+
+  // Collect existing links in the jurisdiction container to avoid duplicates
+  const existingLinks = jurisdictionContainer.querySelectorAll('h5.ae-term-item a');
+  existingLinks.forEach(function (link) {
+    addedLinks.add(link.textContent.trim());
+  });
+
+  // Iterate over each article
+  articles.forEach(function (article) {
+    // Find all h6 elements within the article
+    const links = article.querySelectorAll('h6.ae-term-item');
+
+    // Iterate over each link and collect its information
+    links.forEach(function (link) {
+      const anchor = link.querySelector('a');
+      const linkInfo = {
+        text: anchor.textContent.trim(),
+        href: anchor.href,
+        title: anchor.title
+      };
+
+      // Check if the link has already been added
+      if (!addedLinks.has(linkInfo.text)) {
+        addedLinks.add(linkInfo.text); // Add the link text to the set
+        countryLinks.push(linkInfo);
+      }
+    });
+  });
+
+  // Iterate over the collected links and add them to the jurisdiction container
+  countryLinks.forEach(function (linkInfo) {
+    const newLink = document.createElement('h5');
+    newLink.className = 'ae-term-item ae-term-' + linkInfo.text.toLowerCase().replace(/ /g, '-');
+    newLink.innerHTML = `<a href="${linkInfo.href}" title="${linkInfo.title}">${linkInfo.text}</a>`;
+    jurisdictionContainer.appendChild(newLink); // Append to the new container
+  });
+});
