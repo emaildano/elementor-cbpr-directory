@@ -198,7 +198,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <h4>Privacy Enforcement Authorities</h4>
           <hr>
           <p>${peaWebsite ? `<a href="${peaWebsite}" target="_blank">${enforcementAuthorities}</a>` : enforcementAuthorities}</p>
-
+          <hr>
           <h4>Scope of Certification</h4>
           <p>${scope}</p>
         `;
