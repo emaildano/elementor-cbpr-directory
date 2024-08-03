@@ -112,7 +112,7 @@ class Elementor_cbprDirectory_Widget extends \Elementor\Widget_Base
       <div class="cbpr-search">
         <input class="cbpr-search-input" type="search" id="searchInput" placeholder="Search..." />
         <select id="countryFilter">
-          <option value="">All Countries</option>
+          <option value="">All Jurisdictions</option>
         </select>
         <select id="agentFilter">
           <option value="">All Agents</option>
